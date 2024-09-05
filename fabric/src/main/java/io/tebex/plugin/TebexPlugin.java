@@ -211,7 +211,7 @@ public class TebexPlugin implements Platform, DedicatedServerModInitializer {
 
     @Override
     public CommandResult dispatchCommand(String command) {
-        server.getCommandManager().execute(server.getCommandSource().getDispatcher().parse(command, server.getCommandSource()), command);
+        server.getCommandManager().execute(server.getCommandManager().getDispatcher().parse(command, server.getCommandSource()), command);
         return CommandResult.from(true); // we assume success because the command manager does not report any result
     }
 
